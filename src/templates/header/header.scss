@@ -1,0 +1,19 @@
+header {
+	background-color: transparent;
+
+	figure {
+		display: flex;
+
+		img {
+			width: 3.75rem;
+			height: 3.75rem;
+		}
+
+		figcaption {
+			font-size: 3.75rem;
+			color: #383DB7;
+			text-transform: uppercase;
+			line-height: 3.5rem;
+		}
+	}
+}
