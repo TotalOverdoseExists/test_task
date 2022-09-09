@@ -1,0 +1,31 @@
+/* Layouts */
+#l-banner {
+	height: 60vh;
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(56,61,183,1) 40%, rgba(56,61,183,1) 100%);
+	padding: 2.5rem 0 1.25rem;
+	color: var(--bs-white);
+	position: relative;
+
+	&::before {
+		content: '';
+		background-image: url(../../images/banner.png);
+		background-size: contain;
+		display: block;
+		width: 15.625rem;
+		height: 15.625rem;
+		position: absolute;
+		top: calc(55% - 15.625rem / 2);
+		left: calc(50% - 15.625rem / 2);
+		z-index: 1;
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+
+	span {
+		font-size: .9rem;
+		text-transform: uppercase;
+	}
+}

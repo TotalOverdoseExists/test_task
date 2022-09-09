@@ -63,6 +63,7 @@
 	position: fixed;
 	top: 0;
 	right: -100%;
+	z-index: 999;
 	height: 100%;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
@@ -115,7 +116,7 @@
 				}
 
 				a {
-					color: var(--bs-dark);
+					color: initial;
 				}
 			}
 		}

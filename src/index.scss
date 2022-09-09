@@ -10,7 +10,23 @@
 	transition: .5s;
 }
 
+/* Base */
 html, body {
 	font-family: 'Oswald', sans-serif;
 	font-size: 16px;
+	color: initial;
+}
+
+h1 {
+	font-size: 2.25rem;
+	text-transform: uppercase;
+}
+
+button:not(#header button) {
+	width: 100%;
+	text-transform: uppercase;
+	font-size: .9rem;
+	background-color: var(--mainColor);
+	color: var(--bs-white);
+	border: none;
 }
