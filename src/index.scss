@@ -2,6 +2,9 @@
 
 :root {
 	--mainColor: #383DB7;
+	--addColor: #6E63F6;
+	--grey: #F2F2F2;
+	--greyText: #444;
 }
 
 * {
@@ -15,18 +18,34 @@ html, body {
 	font-family: 'Oswald', sans-serif;
 	font-size: 16px;
 	color: initial;
+	min-height: 100vh;
 }
 
 h1 {
 	font-size: 2.25rem;
 	text-transform: uppercase;
+
+	@media (min-width: 768px) {
+		font-size: 3.75rem;
+		margin-bottom: 1.25rem;
+	}
 }
 
-button:not(#header button) {
+button:not(#l-header button) {
 	width: 100%;
 	text-transform: uppercase;
 	font-size: .9rem;
 	background-color: var(--mainColor);
 	color: var(--bs-white);
 	border: none;
+	padding: .6rem 2rem;
+
+	&:hover {
+		background-color: var(--addColor);
+	}
+
+	@media (min-width: 768px) {
+		font-size: 1.25rem;
+		padding: .75rem 4rem;
+	}
 }
