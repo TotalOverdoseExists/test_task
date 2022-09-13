@@ -1,0 +1,16 @@
+{
+	"item-1": {
+		"img": "/assets/images/firstBlock1.png",
+		"header": "Text_text",
+		"text": "TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT",
+		"link": "/plug/",
+		"linkText": "Text"
+	},
+	"item-2": {
+		"img": "assets/images/firstBlock2.png",
+		"header": "Text_text",
+		"text": "TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT",
+		"link": "/another-plug/",
+		"linkText": "Text"
+	}
+}

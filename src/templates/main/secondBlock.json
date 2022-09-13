@@ -1,0 +1,22 @@
+{
+	"item-1": {
+		"img": "/assets/images/secondBlock1.png",
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	},
+	"item-2": {
+		"img": "/assets/images/secondBlock2.png",
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	},
+	"item-3": {
+		"img": "/assets/images/secondBlock3.png",
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	},
+	"item-4": {
+		"img": "/assets/images/secondBlock4.png",
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	}
+}

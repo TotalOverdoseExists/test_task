@@ -1,11 +1,7 @@
 import React from 'react'
 import './main.scss'
-import firstBlockImg1 from '../../images/firstBlock1.png'
-import firstBlockImg2 from '../../images/firstBlock2.png'
-import secondBlockImg1 from '../../images/secondBlock1.png'
-import secondBlockImg2 from '../../images/secondBlock2.png'
-import secondBlockImg3 from '../../images/secondBlock3.png'
-import secondBlockImg4 from '../../images/secondBlock4.png'
+import firstBlockInfo from './firstBlock.json'
+import secondBlockInfo from './secondBlock.json'
 
 function Banner() {
 	return (
@@ -30,32 +26,19 @@ function FirstBlock() {
 		<section id='l-firstBlock'>
 			<div className='container'>
 				<div className='row'>
-					<div className='col-12 col-xl-6'>
-						<article className='m-firstBlock'>
-							<figure>
-								<img className='img-fluid' src={firstBlockImg1} alt='img1' />
-							</figure>
-							<h2>Text_text</h2>
-							<p>
-								TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT
-							</p>
-							<hr />
-							<a href='/link/'>Text</a>
-						</article>
-					</div>
-					<div className='col-12 col-xl-6'>
-						<article className='m-firstBlock'>
-							<figure>
-								<img className='img-fluid' src={firstBlockImg2} alt='img2' />
-							</figure>
-							<h2>Text_text</h2>
-							<p>
-								TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT
-							</p>
-							<hr />
-							<a href='/link/'>Text</a>
-						</article>
-					</div>
+					{Object.entries(firstBlockInfo).map(([key, value]) => (
+						<div className='col-12 col-xl-6 m-bigPadding' key={key}>
+							<article className='m-firstBlock'>
+								<figure>
+									<img className='img-fluid' src={value.img} alt={value.header} />
+								</figure>
+								<h2>{value.header}</h2>
+								<p>{value.text}</p>
+								<hr />
+								<a href={value.link}>{value.linkText}</a>
+							</article>
+						</div>
+					))}
 				</div>
 			</div>
 		</section>
@@ -74,46 +57,16 @@ function SecondBlock() {
 					</div>
 				</div>
 				<div className='row'>
-					<div className='col-12 col-md-6 col-xl-3'>
-						<article className='m-secondBlock'>
-							<figure>
-								<img className='img-fluid' src={secondBlockImg1} alt='img1' />
-							</figure>
-							<p>
-								TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT
-							</p>
-						</article>
-					</div>
-					<div className='col-12 col-md-6 col-xl-3'>
-						<article className='m-secondBlock'>
-							<figure>
-								<img className='img-fluid' src={secondBlockImg2} alt='img2' />
-							</figure>
-							<p>
-								TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT
-							</p>
-						</article>
-					</div>
-					<div className='col-12 col-md-6 col-xl-3'>
-						<article className='m-secondBlock'>
-							<figure>
-								<img className='img-fluid' src={secondBlockImg3} alt='img3' />
-							</figure>
-							<p>
-								TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT
-							</p>
-						</article>
-					</div>
-					<div className='col-12 col-md-6 col-xl-3'>
-						<article className='m-secondBlock'>
-							<figure>
-								<img className='img-fluid' src={secondBlockImg4} alt='img4' />
-							</figure>
-							<p>
-								TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT
-							</p>
-						</article>
-					</div>
+					{Object.entries(secondBlockInfo).map(([key, value]) => (
+						<div className='col-12 col-md-6 col-xl-3' key={key}>
+							<article className='m-secondBlock'>
+								<figure>
+									<img className='img-fluid' src={value.img} alt={value.alt} />
+								</figure>
+								<p>{value.text}</p>
+							</article>
+						</div>
+					))}
 				</div>
 			</div>
 		</section>

@@ -1,6 +1,27 @@
 import React from 'react'
+import {
+	Link,
+	useLocation
+} from 'react-router-dom'
 import './header.scss'
 import logo from '../../images/logo.png'
+
+function CustomLink({label, to}) {
+	const location = useLocation()
+	const match = location.pathname === to
+
+	const menuClose = () => {
+		if (document.querySelector('#l-menu').classList.contains('js-menuOpen')) {
+			document.querySelector('#l-menu').classList.remove('js-menuOpen')
+		}
+	}
+
+	return (
+		<li className={match ? 'active' : ''}>
+			<Link to={to} onClick={menuClose}>{label}</Link>
+		</li>
+	)
+}
 
 function Header() {
 	const menuToggle = (e) => {
@@ -28,15 +49,9 @@ function Header() {
 					<nav id='l-menu' className='col-md-9 col-xl-6 text-end text-md-center ms-md-auto'>
 						<button onClick={menuToggle} className='d-md-none'>&#10006;</button>
 						<ul>
-							<li className='active'>
-								<a href='/'>Text</a>
-							</li>
-							<li>
-								<a href='/link/'>Text_text</a>
-							</li>
-							<li>
-								<a href='/link/'>text_text_text</a>
-							</li>
+							<CustomLink to='/' label='Text' />
+							<CustomLink to='/plug/' label='Text_text' />
+							<CustomLink to='/another-plug/' label='text_text_text' />
 						</ul>
 					</nav>
 				</div>

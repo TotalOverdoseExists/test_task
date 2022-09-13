@@ -49,3 +49,14 @@ button:not(#l-header button) {
 		padding: .75rem 4rem;
 	}
 }
+
+/* Layouts */
+#root {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	#l-footer {
+		margin-top: auto;
+	}
+}
