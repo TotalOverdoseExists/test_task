@@ -5,9 +5,8 @@ import {
 	Routes,
 	Route
 } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/css/bootstrap-utilities.css'
-import './index.scss'
+import './templates/base/reset.css'
+import './templates/base/base.scss'
 import Header from './templates/header/header'
 import Main from './templates/main/main'
 import Footer from './templates/footer/footer'

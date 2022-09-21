@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap&subset=latin');
 
 :root {
 	--mainColor: #383DB7;
@@ -7,21 +7,20 @@
 	--greyText: #444;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	transition: .5s;
-}
-
-/* Base */
-html, body {
+.body {
 	font-family: 'Oswald', sans-serif;
 	font-size: 16px;
 	color: initial;
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	.footer {
+		margin-top: auto;
+	}
 }
 
-h1 {
+.mainHeading {
 	font-size: 2.25rem;
 	text-transform: uppercase;
 
@@ -31,7 +30,11 @@ h1 {
 	}
 }
 
-button:not(#l-header button) {
+.link {
+	text-decoration: none;
+}
+
+.button {
 	width: 100%;
 	text-transform: uppercase;
 	font-size: .9rem;
@@ -47,16 +50,5 @@ button:not(#l-header button) {
 	@media (min-width: 768px) {
 		font-size: 1.25rem;
 		padding: .75rem 4rem;
-	}
-}
-
-/* Layouts */
-#root {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-
-	#l-footer {
-		margin-top: auto;
 	}
 }

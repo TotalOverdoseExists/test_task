@@ -1,30 +1,81 @@
 /* Layouts */
-#l-header {
-	background-color: var(--bs-white);
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+.header {
+	background-color: #fff;
+	padding: 1rem 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	position: sticky;
 	top: 0;
 	z-index: 999;
 	box-shadow: 0 0 5px -3px #000;
 
-	img {
+	.logoImg {
 		width: 2.5rem;
 		height: 2.5rem;
 	}
 
-	a {
-		text-decoration: none;
+	.logoName {
+		font-size: 2rem;
+		color: var(--mainColor);
+		text-transform: uppercase;
+		line-height: 2rem;
+	}
 
-		span {
-			font-size: 2rem;
-			color: var(--mainColor);
-			text-transform: uppercase;
-			line-height: 2rem;
+	.hamburger {
+		cursor: pointer;
+		padding: .5rem 0;
+
+		.hamburgerLine {
+			display: block;
+			width: 1.5rem;
+			height: .1rem;
+			position: relative;
+			background-color: #000;
+
+			&::before, &::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-color: #000;
+				transition: .2s;
+			}
+
+			&::before {
+				top: .5rem;
+			}
+
+			&::after {
+				top: -.5rem;
+			}
 		}
 	}
 
-	button {
+	.menuButtonHidden {
+		display: none;
+
+		&:checked ~ .nav {
+			opacity: 1;
+		}
+
+		&:checked ~ .hamburgerLine {
+			background-color: transparent;
+		}
+
+		&:checked ~ .hamburgerLine::before {
+			transform: rotate(-45deg);
+			top: 0;
+		}
+
+		&:checked ~ .hamburgerLine::after {
+			transform: rotate(45deg);
+			top: 0;
+		}
+	}
+
+	.buttonHeader {
 		background: none;
 		border: none;
 		font-size: 2rem;
@@ -37,18 +88,20 @@
 		position: static;
 		box-shadow: none;
 
-		img {
+		.logoImg {
 			width: 3rem;
 			height: 3rem;
 			margin-right: calc(-0.5 * var(--bs-gutter-x));
 		}
 
-		a {
-			span {
-				font-size: 2.5rem;
-				line-height: 2.5rem;
-				margin-left: calc(-0.5 * var(--bs-gutter-x));
-			}
+		.logoName {
+			font-size: 2.5rem;
+			line-height: 2.5rem;
+			margin-left: calc(-0.5 * var(--bs-gutter-x));
+		}
+
+		.hamburger {
+			display: none;
 		}
 	}
 
@@ -57,35 +110,33 @@
 		padding-top: 3rem;
 		padding-bottom: 3rem;
 
-		img {
+		.logoImg {
 			width: 3.75rem;
 			height: 3.75rem;
 		}
 
-		a {
-			span {
-				font-size: 3.75rem;
-				line-height: 3.75rem;
-			}
+		.logoName {
+			font-size: 3.75rem;
+			line-height: 3.75rem;
 		}
 	}
 }
 
-#l-menu {
-	position: fixed;
-	top: 0;
-	right: -100%;
-	height: 100%;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+.nav {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: calc(100% - 2.5rem);
+	height: auto;
+	padding: 1.25rem;
+	overflow: hidden;
+	opacity: 0;
+	transition: .5s;
 	background-color: var(--mainColor);
+	box-shadow: 0 0 5px -3px #000;
 	z-index: 998;
 
-	&.js-menuOpen {
-		right: 0;
-	}
-
-	ul {
+	.navList {
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -93,17 +144,17 @@
 		flex-direction: column;
 		align-items: flex-end;
 
-		li {
+		.navItem {
 			font-size: 1.5rem;
 			padding: .5rem 0;
 			border-bottom: .15rem solid transparent;
 
 			&.active, &:hover {
-				border-bottom: .15rem solid var(--bs-white);
+				border-bottom: .15rem solid #fff;
 			}
 
 			a {
-				color: var(--bs-white);
+				color: #fff;
 				text-transform: uppercase;
 				text-decoration: none;
 			}
@@ -112,15 +163,17 @@
 
 	@media (min-width: 768px) {
 		position: static;
-		background-color: var(--bs-white);
+		background-color: #fff;
 		padding: 0;
+		opacity: 1;
+		box-shadow: none;
 
-		ul {
+		.navList {
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-around;
 
-			li {
+			.navItem {
 				padding: 0 1rem .5rem;
 				font-size: 1.125rem;
 
@@ -138,17 +191,17 @@
 	@media (min-width: 1200px) {
 		background-color: transparent;
 
-		ul {
-			li {
+		.navList {
+			.navItem {
 				font-size: 1.25rem;
 				margin-bottom: -.5rem;
 
 				&.active {
-					border-color: var(--bs-white);
+					border-color: #fff;
 				}
 
 				a {
-					color: var(--bs-white);
+					color: #fff;
 				}
 			}
 		}

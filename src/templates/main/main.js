@@ -1,74 +1,92 @@
 import React from 'react'
 import './main.scss'
-import firstBlockInfo from './firstBlock.json'
-import secondBlockInfo from './secondBlock.json'
+import articlesImg1 from '../../images/firstBlock1.png'
+import articlesImg2 from '../../images/firstBlock2.png'
+import advantagesImg1 from '../../images/secondBlock1.png'
+import advantagesImg2 from '../../images/secondBlock2.png'
+import advantagesImg3 from '../../images/secondBlock3.png'
+import advantagesImg4 from '../../images/secondBlock4.png'
+
+const articles = {
+	"item-1": {
+		"img": articlesImg1,
+		"header": "Text_text",
+		"text": "TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT",
+		"link": "/plug/",
+		"linkText": "Text"
+	},
+	"item-2": {
+		"img": articlesImg2,
+		"header": "Text_text",
+		"text": "TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT_TEXT_ TEXT_TEXT_TEXT_TEXT",
+		"link": "/another-plug/",
+		"linkText": "Text"
+	}
+}
+
+const advantages = {
+	"item-1": {
+		"img": advantagesImg1,
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	},
+	"item-2": {
+		"img": advantagesImg2,
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	},
+	"item-3": {
+		"img": advantagesImg3,
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	},
+	"item-4": {
+		"img": advantagesImg4,
+		"alt": "alt",
+		"text": "TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT TEXT_TEXT_TEXT_TEXT"
+	}
+}
 
 function Banner() {
 	return (
 		<section id='l-banner'>
-			<div className='container'>
-				<div className='row text-center ms-md-5 text-md-start'>
-					<div className='col-12'>
-						<h1>Text_text_text</h1>
-						<span className='ms-md-2 ms-xl-0'>Text_text_text_text</span>
-					</div>
-					<div className='col-12 col-md-auto'>
-						<button>Text_text_text</button>
-					</div>
-				</div>
-			</div>
+			<h1 className='mainHeading'>Text_text_text</h1>
+			<span className='ms-md-2 ms-xl-0'>Text_text_text_text</span>
+			<button className='button' aria-label='Clickable button'>Text_text_text</button>
 		</section>
 	)
 }
 
-function FirstBlock() {
+function Articles(props) {
 	return (
 		<section id='l-firstBlock'>
-			<div className='container'>
-				<div className='row'>
-					{Object.entries(firstBlockInfo).map(([key, value]) => (
-						<div className='col-12 col-xl-6 m-bigPadding' key={key}>
-							<article className='m-firstBlock'>
-								<figure>
-									<img className='img-fluid' src={value.img} alt={value.header} />
-								</figure>
-								<h2>{value.header}</h2>
-								<p>{value.text}</p>
-								<hr />
-								<a href={value.link}>{value.linkText}</a>
-							</article>
-						</div>
-					))}
-				</div>
-			</div>
+			{Object.entries(props.data).map(([key, value]) => (
+				<article className='m-firstBlock' key={key}>
+					<figure>
+						<img className='img-fluid' src={value.img} alt={value.header} />
+					</figure>
+					<h2>{value.header}</h2>
+					<p>{value.text}</p>
+					<hr />
+					<a href={value.link}>{value.linkText}</a>
+				</article>
+			))}
 		</section>
 	)
 }
 
-function SecondBlock() {
+function Advantages(props) {
 	return (
 		<section id='l-secondBlock'>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-12'>
-						<h2>
-							Text_text
-						</h2>
-					</div>
-				</div>
-				<div className='row'>
-					{Object.entries(secondBlockInfo).map(([key, value]) => (
-						<div className='col-12 col-md-6 col-xl-3' key={key}>
-							<article className='m-secondBlock'>
-								<figure>
-									<img className='img-fluid' src={value.img} alt={value.alt} />
-								</figure>
-								<p>{value.text}</p>
-							</article>
-						</div>
-					))}
-				</div>
-			</div>
+			<h2>Text_text</h2>
+			{Object.entries(props.data).map(([key, value]) => (
+				<article className='m-secondBlock' key={key}>
+					<figure>
+						<img className='img-fluid' src={value.img} alt={value.alt} />
+					</figure>
+					<p>{value.text}</p>
+				</article>
+			))}
 		</section>
 	)
 }
@@ -77,8 +95,8 @@ function Main() {
 	return (
 		<main>
 			<Banner />
-			<FirstBlock />
-			<SecondBlock />
+			<Articles data={articles} />
+			<Advantages data={advantages} />
 		</main>
 	)
 }
