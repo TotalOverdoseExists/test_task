@@ -4,9 +4,11 @@ import './footer.scss'
 function Footer() {
 	return (
 		<footer className='footer'>
-			<a className='footerLink' href='/'>
-				Logo
-			</a>
+			<div className='wrapper'>
+				<a className='footerLink' href='/'>
+					Logo
+				</a>
+			</div>
 		</footer>
 	)
 }

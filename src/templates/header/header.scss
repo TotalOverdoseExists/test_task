@@ -2,13 +2,17 @@
 .header {
 	background-color: #fff;
 	padding: 1rem 1.25rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	position: sticky;
 	top: 0;
 	z-index: 999;
 	box-shadow: 0 0 5px -3px #000;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		box-sizing: border-box;
+	}
 
 	.logoImg {
 		width: 2.5rem;
@@ -58,18 +62,20 @@
 
 		&:checked ~ .nav {
 			opacity: 1;
+			padding: 1.25rem;
+			height: auto;
 		}
 
-		&:checked ~ .hamburgerLine {
+		&:checked ~ .hamburger .hamburgerLine {
 			background-color: transparent;
 		}
 
-		&:checked ~ .hamburgerLine::before {
+		&:checked ~ .hamburger .hamburgerLine::before {
 			transform: rotate(-45deg);
 			top: 0;
 		}
 
-		&:checked ~ .hamburgerLine::after {
+		&:checked ~ .hamburger .hamburgerLine::after {
 			transform: rotate(45deg);
 			top: 0;
 		}
@@ -83,21 +89,23 @@
 	}
 
 	@media (min-width: 768px) {
-		padding-top: 2.5rem;
-		padding-bottom: 2.5rem;
+		padding: 2.25rem 0;
 		position: static;
 		box-shadow: none;
+
+		.wrapper {
+			padding: 0 2.25rem;
+		}
 
 		.logoImg {
 			width: 3rem;
 			height: 3rem;
-			margin-right: calc(-0.5 * var(--bs-gutter-x));
 		}
 
 		.logoName {
 			font-size: 2.5rem;
 			line-height: 2.5rem;
-			margin-left: calc(-0.5 * var(--bs-gutter-x));
+			margin-right: 6.25rem;
 		}
 
 		.hamburger {
@@ -110,6 +118,11 @@
 		padding-top: 3rem;
 		padding-bottom: 3rem;
 
+		.wrapper {
+			padding: 0 1.25rem;
+			justify-content: flex-start;
+		}
+
 		.logoImg {
 			width: 3.75rem;
 			height: 3.75rem;
@@ -118,6 +131,7 @@
 		.logoName {
 			font-size: 3.75rem;
 			line-height: 3.75rem;
+			margin-right: 32rem;
 		}
 	}
 }
@@ -127,8 +141,8 @@
 	top: 100%;
 	left: 0;
 	width: calc(100% - 2.5rem);
-	height: auto;
-	padding: 1.25rem;
+	height: 0;
+	padding: 0;
 	overflow: hidden;
 	opacity: 0;
 	transition: .5s;
@@ -153,7 +167,7 @@
 				border-bottom: .15rem solid #fff;
 			}
 
-			a {
+			.navLink {
 				color: #fff;
 				text-transform: uppercase;
 				text-decoration: none;
@@ -164,6 +178,7 @@
 	@media (min-width: 768px) {
 		position: static;
 		background-color: #fff;
+		height: auto;
 		padding: 0;
 		opacity: 1;
 		box-shadow: none;
@@ -171,17 +186,17 @@
 		.navList {
 			flex-direction: row;
 			align-items: center;
-			justify-content: space-around;
+			justify-content: space-between;
 
 			.navItem {
 				padding: 0 1rem .5rem;
 				font-size: 1.125rem;
 
-				&.active {
+				&.active, &:hover {
 					border-color: var(--mainColor);
 				}
 
-				a {
+				.navLink {
 					color: initial;
 				}
 			}
@@ -190,17 +205,17 @@
 
 	@media (min-width: 1200px) {
 		background-color: transparent;
+		flex: 0 0 40%;
 
 		.navList {
 			.navItem {
 				font-size: 1.25rem;
-				margin-bottom: -.5rem;
 
-				&.active {
+				&.active, &:hover {
 					border-color: #fff;
 				}
 
-				a {
+				.navLink {
 					color: #fff;
 				}
 			}

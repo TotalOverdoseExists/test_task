@@ -37,11 +37,13 @@
 .button {
 	width: 100%;
 	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;;
 	font-size: .9rem;
 	background-color: var(--mainColor);
-	color: var(--bs-white);
+	color: #fff;
 	border: none;
 	padding: .6rem 2rem;
+	cursor: pointer;
 
 	&:hover {
 		background-color: var(--addColor);
@@ -50,5 +52,18 @@
 	@media (min-width: 768px) {
 		font-size: 1.25rem;
 		padding: .75rem 4rem;
+	}
+}
+
+.wrapper {
+	width: auto;
+
+	@media (min-width: 768px) {
+		width: 700px;
+		margin: auto;
+	}
+
+	@media (min-width: 1200px) {
+		width: 1220px;
 	}
 }

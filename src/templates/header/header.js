@@ -12,7 +12,7 @@ function CustomLink({to, label}) {
 
 	return (
 		<li className={match ? 'navItem active' : 'navItem'} role='menuitem'>
-			<Link to={to}>{label}</Link>
+			<Link className='navLink' to={to}>{label}</Link>
 		</li>
 	)
 }
@@ -20,23 +20,25 @@ function CustomLink({to, label}) {
 function Header() {
 	return (
 		<header className='header'>
-			<a className='link' href='/'>
-				<img className='logoImg' src={logo} alt='logo' />
-			</a>
-			<a className='link' href='/'>
-				<span className='logoName'>Logo</span>
-			</a>
-			<input className='menuButtonHidden' type='checkbox' id='menuButton' />
-			<label className='hamburger' htmlFor="menuButton" role='button' aria-labelledby='menuButton' aria-controls='nav' aria-expanded='false'>
-				<span className='hamburgerLine'></span>
-			</label>
-			<nav id='nav' className='nav' role='menu' aria-labelledby='menuButton'>
-				<ul className='navList'>
-					<CustomLink to='/' label='Text' />
-					<CustomLink to='/plug/' label='Text_text' />
-					<CustomLink to='/another-plug/' label='text_text_text' />
-				</ul>
-			</nav>
+			<div className='wrapper'>
+				<a className='link' href='/'>
+					<img className='logoImg' src={logo} alt='logo' />
+				</a>
+				<a className='link' href='/'>
+					<span className='logoName'>Logo</span>
+				</a>
+				<input className='menuButtonHidden' type='checkbox' id='menuButton' />
+				<label className='hamburger' htmlFor="menuButton" role='button' aria-labelledby='menuButton' aria-controls='nav' aria-expanded='false'>
+					<span className='hamburgerLine'></span>
+				</label>
+				<nav id='nav' className='nav' role='menu' aria-labelledby='menuButton'>
+					<ul className='navList'>
+						<CustomLink to='/' label='Text' />
+						<CustomLink to='/plug/' label='Text_text' />
+						<CustomLink to='/another-plug/' label='text_text_text' />
+					</ul>
+				</nav>
+			</div>
 		</header>
 	)
 }

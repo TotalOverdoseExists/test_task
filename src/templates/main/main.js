@@ -49,26 +49,28 @@ const advantages = {
 
 function Banner() {
 	return (
-		<section id='l-banner'>
-			<h1 className='mainHeading'>Text_text_text</h1>
-			<span className='ms-md-2 ms-xl-0'>Text_text_text_text</span>
-			<button className='button' aria-label='Clickable button'>Text_text_text</button>
+		<section className='banner'>
+			<div className='wrapper'>
+				<h1 className='mainHeading'>Text_text_text</h1>
+				<span className='bannerInfo'>Text_text_text_text</span>
+				<button className='button bannerButton' aria-label='Clickable button'>Text_text_text</button>
+			</div>
 		</section>
 	)
 }
 
 function Articles(props) {
 	return (
-		<section id='l-firstBlock'>
+		<section className='articles wrapper'>
 			{Object.entries(props.data).map(([key, value]) => (
-				<article className='m-firstBlock' key={key}>
-					<figure>
-						<img className='img-fluid' src={value.img} alt={value.header} />
+				<article className='article' key={key}>
+					<figure className='articleImgWrapper'>
+						<img className='articleImg' src={value.img} alt={value.header} />
 					</figure>
-					<h2>{value.header}</h2>
-					<p>{value.text}</p>
-					<hr />
-					<a href={value.link}>{value.linkText}</a>
+					<h2 className='articleHeading'>{value.header}</h2>
+					<p className='articleText'>{value.text}</p>
+					<hr className='articleDevider' />
+					<a className='articleLink' href={value.link}>{value.linkText}</a>
 				</article>
 			))}
 		</section>
@@ -77,14 +79,14 @@ function Articles(props) {
 
 function Advantages(props) {
 	return (
-		<section id='l-secondBlock'>
-			<h2>Text_text</h2>
+		<section className='advantages wrapper'>
+			<h2 className='advantagesHeading'>Text_text</h2>
 			{Object.entries(props.data).map(([key, value]) => (
-				<article className='m-secondBlock' key={key}>
-					<figure>
-						<img className='img-fluid' src={value.img} alt={value.alt} />
+				<article className='advantage' key={key}>
+					<figure className='advantageImgWrapper'>
+						<img className='advantageImg' src={value.img} alt={value.alt} />
 					</figure>
-					<p>{value.text}</p>
+					<p className='advantageText'>{value.text}</p>
 				</article>
 			))}
 		</section>

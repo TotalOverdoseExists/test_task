@@ -3,15 +3,9 @@ import './plug.scss'
 
 function Plug() {
 	return (
-		<section id='l-plug'>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-12'>
-						<h1>Plug</h1>
-						<p>TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT</p>
-					</div>
-				</div>
-			</div>
+		<section className='page'>
+			<h1 className='mainHeading'>Plug</h1>
+			<p className='pageText'>TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT</p>
 		</section>
 	)
 }

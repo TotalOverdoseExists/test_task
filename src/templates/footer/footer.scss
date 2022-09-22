@@ -2,6 +2,7 @@
 .footer {
 	padding: 1rem 0;
 	background-color: var(--grey);
+	text-align: center;
 
 	.footerLink {
 		text-decoration: none;
@@ -13,6 +14,7 @@
 
 	@media (min-width: 768px) {
 		padding: 2.5rem 0;
+		text-align: left;
 
 		.footerLink {
 			font-size: 2.5rem;

@@ -1,6 +1,8 @@
 /* Layouts */
-#l-plug {
-	p {
+.page {
+	padding: 1.25rem;
+	
+	.pageText {
 		text-transform: uppercase;
 		word-break: break-word;
 	}
