@@ -1,6 +1,6 @@
 /* Layouts */
 .banner {
-	height: 60vh;
+	height: 55vh;
 	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(56,61,183,1) 40%, rgba(56,61,183,1) 100%);
 	padding: 2.5rem 1.25rem 0;
 	margin-bottom: 1.25rem;
@@ -21,7 +21,7 @@
 			width: 15.625rem;
 			height: 15.625rem;
 			position: absolute;
-			top: calc(52% - 15.625rem / 2);
+			top: calc(53% - 15.625rem / 2);
 			left: calc(50% - 15.625rem / 2);
 			z-index: -1;
 		}
@@ -45,19 +45,18 @@
 		height: 47rem;
 		background: transparent;
 		color: initial;
-		margin-bottom: 4.25rem;
 		text-align: left;
 
 		.wrapper {
-			padding-left: 6rem;
+			padding-left: 5.5rem;
 
 			&::before {
 				width: 32rem;
 				height: 32rem;
 				top: auto;
 				left: auto;
-				bottom: 0;
-				right: 2.5rem;
+				bottom: 3rem;
+				right: .5rem;
 			}
 		}
 
@@ -69,41 +68,47 @@
 		.bannerButton {
 			position: static;
 			width: auto;
-			margin-top: 5.5rem;
-		}
-	}
-
-	@media (min-width: 992px) {
-		.wrapper {
-			&::before {
-				right: 7rem;
-			}
+			margin-top: 5.75rem;
 		}
 	}
 
 	@media (min-width: 1200px) {
-		height: 33rem;
+		height: 30rem;
+		padding-top: 4.5rem;
 		background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(56,61,183,1) 50%, rgba(56,61,183,1) 100%);;
 		
 		.wrapper {
+			padding-left: 4.5rem;
+
+			.bannerInfo {
+				margin-left: 0;
+			}
+
 			&::before {
 				bottom: -.5rem;
-				right: 13rem;
-			}
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.wrapper {
-			&::before {
-				right: 19rem;
+				right: 15.5rem;
 			}
 		}
 	}
 }
 
 .articles {
-	margin: 1.25rem 0;
+	margin-top: 1.25rem;
+	margin-bottom: 2rem;
+	padding: 0 1.25rem;
+
+	@media (min-width: 768px) {
+		margin-bottom: 2.5rem;
+		padding: 0;
+	}
+
+	@media (min-width: 1200px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 5rem;
+		margin-top: 5rem;
+		margin-bottom: 4.5rem;
+	}
 
 	.article {
 		display: grid;
@@ -141,6 +146,7 @@
 			grid-area: text;
 			font-family: Arial, sans-serif;
 			font-size: .9rem;
+			line-height: 1.125rem;
 			text-transform: uppercase;
 			word-break: break-word;
 			color: var(--greyText);
@@ -181,12 +187,14 @@
 		}
 	
 		@media (min-width:768px) {
+			grid-gap: 1.5rem;
 			grid-template-areas: 'header . img'
 													 'text text img'
 													 'text text img'
 													 'link link img';
 			
 			padding: 3.125rem;
+			margin-bottom: 2rem;
 	
 			.articleImgWrapper {
 				padding: 2.1875rem;
@@ -204,6 +212,7 @@
 	
 			.articleText {
 				font-size: 1rem;
+				line-height: 1.5rem;
 				padding: 0;
 			}
 	
@@ -222,6 +231,7 @@
 													 'text text text text'
 													 'text text text text'
 													 'link link link link';
+			margin: 0;
 	
 			.articleImgWrapper {
 				padding: .875rem;
@@ -240,7 +250,9 @@
 }
 
 .advantages {
-	margin: 1.25rem 0;
+	margin-top: 1.25rem;
+	margin-bottom: 2.5rem;
+	padding: 0 1.25rem;
 
 	.advantagesHeading {
 		font-size: 2.25rem;
@@ -250,22 +262,35 @@
 	}
 
 	@media (min-width: 768px) {
+		padding: 0;
+		margin-bottom: 2.75rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto 1fr 1fr;
+		grid-gap: 4.75rem;
 		counter-reset: counter;
 
 		.advantagesHeading {
 			font-size: 3.75rem;
-			margin-left: 0;
-			margin-bottom: 4.75rem;
+			margin: 0;
+			grid-column: 1/3;
 		}
 	}
 
 	@media (min-width: 1200px) {
 		margin-bottom: 6.5rem;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: auto 1fr;
+		grid-gap: 4.5rem;
+
+		.advantagesHeading {
+			grid-column: 1/5;
+		}
 	}
 
 	.advantage {
 		display: flex;
-		margin-bottom: 1.125rem;
+		margin-bottom: 1.25rem;
 	
 		.advantageImgWrapper {
 			flex: 0 0 auto;
@@ -283,13 +308,14 @@
 		.advantageText {
 			font-family: Arial, sans-serif;
 			font-size: .9rem;
-			line-height: 1.2rem;
+			line-height: 1.125rem;
 			margin: 0;
 		}
 	
 		@media (min-width: 768px) {
 			flex-direction: column;
-			margin-bottom: 4rem;
+			margin-bottom: 0;
+			padding-bottom: 3rem;
 			counter-increment: counter;
 			position: relative;
 	
@@ -313,7 +339,7 @@
 				content: counter(counter);
 				position: absolute;
 				top: 0;
-				right: 6.5rem;
+				right: 5rem;
 				font-size: 17.5rem;
 				line-height: 75%;
 				color: var(--grey);
@@ -321,12 +347,6 @@
 				display: block;
 				width: 7.5rem;
 				text-align: center;
-			}
-		}
-	
-		@media (min-width: 992px) {
-			&::after {
-				right: 14rem;
 			}
 		}
 	
@@ -341,13 +361,7 @@
 			}
 	
 			&::after {
-				right: 2rem;
-			}
-		}
-	
-		@media (min-width: 1400px) {
-			&::after {
-				right: 4.5rem;
+				right: 1rem;
 			}
 		}
 	}

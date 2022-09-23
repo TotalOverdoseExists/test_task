@@ -31,8 +31,8 @@ function Header() {
 				<label className='hamburger' htmlFor="menuButton" role='button' aria-labelledby='menuButton' aria-controls='nav' aria-expanded='false'>
 					<span className='hamburgerLine'></span>
 				</label>
-				<nav id='nav' className='nav' role='menu' aria-labelledby='menuButton'>
-					<ul className='navList'>
+				<nav id='nav' className='nav' aria-labelledby='menuButton'>
+					<ul className='navList' role='menu'>
 						<CustomLink to='/' label='Text' />
 						<CustomLink to='/plug/' label='Text_text' />
 						<CustomLink to='/another-plug/' label='text_text_text' />
